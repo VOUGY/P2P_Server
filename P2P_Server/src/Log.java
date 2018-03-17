@@ -22,7 +22,7 @@ public class Log {
 	
 	public Log ()
 	{
-		
+		System.out.println("test;");
 	}
 	
 	public void CreateLogFile()
