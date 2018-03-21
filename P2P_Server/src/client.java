@@ -1,7 +1,7 @@
 import java.net.InetAddress;
 import java.util.List;
 
-public class client {
+public class Client {
 
 	InetAddress ownIP;
 	String ownName;
