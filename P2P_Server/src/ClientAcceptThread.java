@@ -4,7 +4,9 @@ import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
 
 public class ClientAcceptThread implements Runnable {
 
@@ -15,6 +17,8 @@ public class ClientAcceptThread implements Runnable {
 	InetAddress localAddress = null;
 	Socket srvSocket = null;
 	int nbr_client = 0;
+	ArrayList<Client> myclients = new ArrayList<>();
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -48,10 +52,11 @@ public class ClientAcceptThread implements Runnable {
 			{
 			// wait for client connection
 			srvSocket = mySkServer.accept();
+			
 			System.out.println("client is connected");
 			//String message = "";	
 			}
-
+			//new ClientEchoThread(srvSocket);	
 		} catch (SocketException e) {
 
 			System.out.println("Connection Timed out");
